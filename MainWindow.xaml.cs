@@ -24,6 +24,8 @@ namespace Game4Kids {
             { 15, Colors.Peru }
         };
 
+        private List<int> colorList = new List<int>();
+
         public MainWindow() {
             InitializeComponent();
             RandomizeButtonsColor();
@@ -31,7 +33,7 @@ namespace Game4Kids {
 
         private void RandomizeButtonsColor() {
 
-            // Logik implementieren, damit Buttons einzigartige Farben haben.
+            colorList.Clear();
 
             FirstButton.Background = new SolidColorBrush(GetRandomColor());
             SecondButton.Background = new SolidColorBrush(GetRandomColor());
@@ -40,26 +42,38 @@ namespace Game4Kids {
         }
 
         private Color GetRandomColor() {
+            Color randomColor;
             Random random = new Random();
-            int randomKey = random.Next(1, dictionary.Count + 1);
-            Color randomColor = dictionary[randomKey];
+            int randomKey;
+
+            do {
+                randomKey = random.Next(1, dictionary.Count + 1);
+                randomColor = dictionary[randomKey];
+            } while (colorList.Any(l => l.Equals(randomKey)));
+
+            colorList.Add(randomKey);
+
             return randomColor;
         }
 
         private void FirstButton_Click(object sender, RoutedEventArgs e) {
-            throw new NotImplementedException();
+            FirstButton.Background = new SolidColorBrush(GetRandomColor());
+            RandomizeButtonsColor();
         }
 
         private void SecondButton_Click(object sender, RoutedEventArgs e) {
-            throw new NotImplementedException();
+            SecondButton.Background = new SolidColorBrush(GetRandomColor());
+            RandomizeButtonsColor();
         }
 
         private void ThirdButton_Click(object sender, RoutedEventArgs e) {
-            throw new NotImplementedException();
+            ThirdButton.Background= new SolidColorBrush(GetRandomColor());
+            RandomizeButtonsColor();
         }
 
         private void FourthButton_Click(object sender, RoutedEventArgs e) {
-            throw new NotImplementedException();
+            FourthButton.Background = new SolidColorBrush(GetRandomColor());
+            RandomizeButtonsColor();
         }
     }
 }
