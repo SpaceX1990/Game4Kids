@@ -30,7 +30,8 @@ namespace Game4Kids {
         }
 
         private void RandomizeButtonsColor() {
-            Color randomColor = GetRandomColor();
+
+            // Logik implementieren, damit Buttons einzigartige Farben haben.
 
             FirstButton.Background = new SolidColorBrush(GetRandomColor());
             SecondButton.Background = new SolidColorBrush(GetRandomColor());
@@ -43,6 +44,22 @@ namespace Game4Kids {
             int randomKey = random.Next(1, dictionary.Count + 1);
             Color randomColor = dictionary[randomKey];
             return randomColor;
+        }
+
+        private void FirstButton_Click(object sender, RoutedEventArgs e) {
+            throw new NotImplementedException();
+        }
+
+        private void SecondButton_Click(object sender, RoutedEventArgs e) {
+            throw new NotImplementedException();
+        }
+
+        private void ThirdButton_Click(object sender, RoutedEventArgs e) {
+            throw new NotImplementedException();
+        }
+
+        private void FourthButton_Click(object sender, RoutedEventArgs e) {
+            throw new NotImplementedException();
         }
     }
 }
