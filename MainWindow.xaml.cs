@@ -16,16 +16,22 @@ namespace Game4Kids {
             buttonList.Add(ThirdButton);
             buttonList.Add(FourthButton);
 
-            AssignRandomCross();
+            AssignRandomCross(null);
         }
 
-        private void AssignRandomCross() {
+        private void AssignRandomCross(Button excludeButton) {
             foreach (Button button in buttonList) {
                 button.Content = string.Empty;
+                button.FontSize = 48;
             }
 
-            int randomIndex = rand.Next(buttonList.Count);
-            buttonWithCross = buttonList[randomIndex];
+            Button newButtonWithCross;
+            do {
+                int randomIndex = rand.Next(buttonList.Count);
+                newButtonWithCross = buttonList[randomIndex];
+            } while (newButtonWithCross == excludeButton);
+
+            buttonWithCross = newButtonWithCross;
             buttonWithCross.Content = "X";
         }
 
@@ -40,7 +46,7 @@ namespace Game4Kids {
                 PlayBeepSound();
 
                 if (clickedButton.Content.ToString() == "X") {
-                    AssignRandomCross();
+                    AssignRandomCross(clickedButton);
                 }
             }
         }
