@@ -16,6 +16,7 @@ namespace Game4Kids {
         private void Grid_ButtonClick(object sender, RoutedEventArgs e) {
             if (e.OriginalSource is Button clickedButton) {
                 clickedButton.Background = new SolidColorBrush(GetRandomColor());
+                e.Handled = true;
             }
         }
     }
