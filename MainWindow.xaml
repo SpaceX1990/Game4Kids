@@ -4,8 +4,6 @@
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
         <Style TargetType="Button" x:Key="CustomButtonStyle">
-            <Setter Property="Background" Value="LightGray"/>
-            <Setter Property="BorderBrush" Value="Gray"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -21,22 +19,22 @@
         </Style>
     </Window.Resources>
 
-    <Grid>
-        <Button x:Name="FirstButton" Style="{StaticResource CustomButtonStyle}" 
+    <Grid Button.Click="Grid_ButtonClick">
+        <Button Style="{StaticResource CustomButtonStyle}" 
                 HorizontalAlignment="Left" Margin="60,40,0,0" 
-                VerticalAlignment="Top" Height="177" Width="255" 
-                Click="FirstButton_Click"/>
-        <Button x:Name="SecondButton" Style="{StaticResource CustomButtonStyle}" 
+                VerticalAlignment="Top" Height="177" Width="255"
+                Background="Red"/>
+        <Button Style="{StaticResource CustomButtonStyle}" 
                 HorizontalAlignment="Left" Margin="466,40,0,0" 
-                VerticalAlignment="Top" Height="177" Width="255" 
-                Click="SecondButton_Click"/>
-        <Button x:Name="ThirdButton" Style="{StaticResource CustomButtonStyle}" 
+                VerticalAlignment="Top" Height="177" Width="255"
+                Background="Blue"/>
+        <Button Style="{StaticResource CustomButtonStyle}" 
                 HorizontalAlignment="Left" Margin="60,231,0,0" 
-                VerticalAlignment="Top" Height="177" Width="255" 
-                Click="ThirdButton_Click"/>
-        <Button x:Name="FourthButton" Style="{StaticResource CustomButtonStyle}" 
+                VerticalAlignment="Top" Height="177" Width="255"
+                Background="Yellow"/>
+        <Button Style="{StaticResource CustomButtonStyle}" 
                 HorizontalAlignment="Left" Margin="466,231,0,0" 
-                VerticalAlignment="Top" Height="177" Width="255" 
-                Click="FourthButton_Click"/>
+                VerticalAlignment="Top" Height="177" Width="255"
+                Background="Green"/>
     </Grid>
 </Window>
