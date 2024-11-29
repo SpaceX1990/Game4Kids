@@ -4,9 +4,10 @@ using System.Windows.Media;
 
 namespace Game4Kids {
     public partial class MainWindow : Window {
-        private Button buttonWithCross;
+        private Button buttonWithSymbol;
         private List<Button> buttonList = new List<Button>();
         private readonly Random rand = new Random();
+        private const string Symbol = "★";
 
         public MainWindow() {
             InitializeComponent();
@@ -31,8 +32,8 @@ namespace Game4Kids {
                 newButtonWithCross = buttonList[randomIndex];
             } while (newButtonWithCross == excludeButton);
 
-            buttonWithCross = newButtonWithCross;
-            buttonWithCross.Content = "X";
+            buttonWithSymbol = newButtonWithCross;
+            buttonWithSymbol.Content = Symbol;
         }
 
         private Color GetRandomColor() {
@@ -45,7 +46,7 @@ namespace Game4Kids {
 
                 PlayBeepSound();
 
-                if (clickedButton.Content.ToString() == "X") {
+                if (clickedButton.Content == Symbol) {
                     AssignRandomCross(clickedButton);
                 }
             }
