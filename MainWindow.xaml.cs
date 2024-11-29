@@ -23,7 +23,7 @@ namespace Game4Kids {
         private void AssignRandomSymbol(Button excludeButton) {
             foreach (Button button in buttonList) {
                 button.Content = string.Empty;
-                button.FontSize = 48;
+                button.FontSize = 96;
             }
 
             Button newButtonWithSymbol;
