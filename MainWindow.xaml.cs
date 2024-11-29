@@ -17,7 +17,12 @@ namespace Game4Kids {
             if (e.OriginalSource is Button clickedButton) {
                 clickedButton.Background = new SolidColorBrush(GetRandomColor());
                 e.Handled = true;
+
+                PlayBeepSound();
             }
+        }
+        private void PlayBeepSound() {
+            Console.Beep(1000, 500);
         }
     }
 }
